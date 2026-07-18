@@ -52,10 +52,10 @@ No installation, accounts, or internet connection required.
 
 ## Release Updates
 
-# v1.32
+### v1.32
 - “Clan” now is expandable and shows a textbox for filling in additional info like Clan Weakness.
 - the following texts are now renameable and expandable in the v20 sheet in the virtual panel: “Conscience”, “Self-Control” and “Courage”.
 - the save button, the load button and the reset button should now always be to the left of the dice roll button.
 
-# v1.31
+### v1.31
 - Character Sheets v5 and v20 released on Github
