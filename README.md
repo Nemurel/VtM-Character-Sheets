@@ -25,7 +25,7 @@ Self-contained, single-file HTML character sheets for **Vampire: The Masquerade*
 - **Virtues** panel (Conscience, Self-Control, Courage).
 - Classic **Humanity** path and morality handling.
 - **Profile panel** — description, backstory, and derangements. Complete with fully featured Relationships-, Possessions-, Haven- and Notes-Panel.
-- **Character Portrait Picture**, **save/load to file**, and **reset**, all from the toolbar.
+- **Character Portrait Picture**, save/load to file
 - **Custom Panels** - Add your own panels to the sheet and add trackers, text and more.
 
 ## VtM 5th Edition Sheet Features
@@ -38,7 +38,7 @@ Self-contained, single-file HTML character sheets for **Vampire: The Masquerade*
 - **Convictions & Touchstones** panel.
 - **Blood Sorcery Rituals** panel.
 - **Profile panel** — description, backstory, and derangements. Complete with fully featured Relationships-, Possessions-, Haven- and Notes-Panel.
-- **Character Portrait Picture**, **save/load to file**, and **reset**, all from the toolbar.
+- **Character Portrait Picture**, **save/load to file**
 - **Custom Panels** - Add your own panels to the sheet and add trackers, text and more.
 
 ## Getting started
