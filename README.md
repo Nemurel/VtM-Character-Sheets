@@ -45,3 +45,6 @@ Self-contained, single-file HTML character sheets for **Vampire: The Masquerade*
 2. Open the .html in any modern browser.
 3. Fill in your character, then use the "Save"-button at the bottom to save to file — reload it later with the Load Button.
 No installation, accounts, or internet connection required.
+<img width="1230" height="650" alt="grafik" src="https://github.com/user-attachments/assets/944f3c3d-698a-4e0a-a8a2-edf1ea272212" />
+<img width="3374" height="542" alt="grafik" src="https://github.com/user-attachments/assets/b753bf9d-e129-4763-a0be-16a081dd7c57" />
+
