@@ -4,9 +4,9 @@
 
 ## Index
 
-- [Features](##VtM-20th-Anniversary-Edition-Sheet-Features)
-- [Getting started](##getting-started)
-- [Release Updates](##release-updates)
+- [Features](#vtm-20th-anniversary-edition-sheet-features)
+- [Getting started](#getting-started)
+- [Release Updates](#release-updates)
  
 Self-contained, single-file HTML character sheets for **Vampire: The Masquerade**, covering both the **5th Edition (V5)** and **20th Anniversary Edition (V20)** rules. Each sheet is a single `.html` file — no server, no dependencies. Compatible with all devices, regardless of screen size (even smartphones). All data lives locally; save and load your character as a file whenever you like.
 
