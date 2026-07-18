@@ -3,6 +3,7 @@
 [Support this project on Ko-fi!](https://ko-fi.com/nemurel)
 
 ## Index
+
 - [Features](##VtM-20th-Anniversary-Edition-Sheet-Features)
 - [Getting started](##getting-started)
 - [Release Updates](##release-updates)
