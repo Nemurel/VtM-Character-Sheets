@@ -1588,6 +1588,8 @@ let saveTimer = null;
 async function loadState(){
   state = JSON.parse(JSON.stringify(DEFAULT_STATE));
   normalizeState();
+  // A freshly opened sheet starts in the same clean state as after a Reset.
+  applyResetValues();
 }
 
 function migrateState(parsed){
@@ -3016,16 +3018,20 @@ function importStateFromFile(file){
 }
 
 /* ================= RESET ================= */
-function resetSheet(){
+/* Sets every value to its baseline. Used by the Reset button AND as the
+   default state of a freshly opened sheet (see loadState). Attributes
+   start with 1 dot each, matching the V5 character creation baseline. */
+function applyResetValues(){
   const h = state.header;
   h.name=''; h.portraitUrl=''; h.clan=''; h.clanDesc=''; h.concept=''; h.chronicle=''; h.sire='';
   h.predator=''; h.predatorDesc=''; h.ambition=''; h.ambitionDesc='';
   h.desire=''; h.desireDesc=''; h.generation=''; h.sect='';
-  h.bane=''; h.compulsion='';
+  h.realAge=''; h.experience='';
+  h.bane=''; h.baneDesc=''; h.compulsion=''; h.compulsionDesc='';
 
   ['physical','social','mental'].forEach(k=>{
     state.attributes[k].forEach(it=>{
-      it.v = 0;
+      it.v = 1;
       if('spec' in it) it.spec = '';
     });
     state.abilities[k].forEach(it=>{
@@ -3057,7 +3063,9 @@ function resetSheet(){
   state.stains = 0;
 
   state.customPanels = [];
-
+}
+function resetSheet(){
+  applyResetValues();
   renderAll();
   scheduleSave();
 }
@@ -3122,7 +3130,7 @@ async function init(){
 
   document.getElementById('resetBtn').addEventListener('click', ()=>{
     showConfirmModal(
-      'Really reset everything? All dots will be unmarked, the header text fields and all specialty fields will be cleared, Disciplines, Merits, Flaws, Backgrounds and Convictions will be deleted, and Hunger will be set to 1. This cannot be undone.',
+      'Really reset everything? Attributes will be set to 1 dot, all other dots will be unmarked, the header text fields and all specialty fields will be cleared, Disciplines, Merits, Flaws, Backgrounds and Convictions will be deleted, and Hunger will be set to 1. This cannot be undone.',
       'Reset Everything',
       resetSheet
     );
