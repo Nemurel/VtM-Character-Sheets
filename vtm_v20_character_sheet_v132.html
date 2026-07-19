@@ -1478,6 +1478,8 @@ let saveTimer = null;
 async function loadState(){
   state = JSON.parse(JSON.stringify(DEFAULT_STATE));
   normalizeState();
+  // A freshly opened sheet starts in the same clean state as after a Reset.
+  applyResetValues();
 }
 
 function migrateState(parsed){
@@ -2735,14 +2737,17 @@ function importStateFromFile(file){
 }
 
 /* ================= RESET ================= */
-function resetSheet(){
+/* Sets every value to its baseline. Used by the Reset button AND as the
+   default state of a freshly opened sheet (see loadState). Attributes and
+   Virtues start with 1 dot each, matching character creation baselines. */
+function applyResetValues(){
   const h = state.header;
   h.name=''; h.portraitUrl=''; h.clan=''; h.clanDesc=''; h.concept=''; h.chronicle=''; h.sire='';
   h.nature=''; h.natureDesc=''; h.demeanor=''; h.demeanorDesc=''; h.generation=''; h.realAge=''; h.experience=''; h.sect='';
 
   ['physical','social','mental'].forEach(k=>{
     state.attributes[k].forEach(it=>{
-      it.v = 0;
+      it.v = 1;
       if('spec' in it) it.spec = '';
     });
   });
@@ -2772,14 +2777,16 @@ function resetSheet(){
   state.path.name = '';
   state.path.desc = '';
 
-  state.virtues.conscience = 0;
-  state.virtues.selfControl = 0;
-  state.virtues.courage = 0;
+  state.virtues.conscience = 1;
+  state.virtues.selfControl = 1;
+  state.virtues.courage = 1;
   state.virtueLabels = { conscience:'Conscience', selfControl:'Self-Control', courage:'Courage' };
   state.virtueDescs = { conscience:'', selfControl:'', courage:'' };
 
   state.customPanels = [];
-
+}
+function resetSheet(){
+  applyResetValues();
   renderAll();
   scheduleSave();
 }
@@ -2844,7 +2851,7 @@ async function init(){
 
   document.getElementById('resetBtn').addEventListener('click', ()=>{
     showConfirmModal(
-      'Really reset everything? All dots will be unmarked, the header text fields and all specialty fields will be cleared, Disciplines, Merits, Flaws and Backgrounds will be deleted, and the Blood Pool will be set to 10. This cannot be undone.',
+      'Really reset everything? Attributes and Virtues will be set to 1 dot, all other dots will be unmarked, the header text fields and all specialty fields will be cleared, Disciplines, Merits, Flaws and Backgrounds will be deleted, and the Blood Pool will be set to 10. This cannot be undone.',
       'Reset Everything',
       resetSheet
     );
