@@ -59,12 +59,12 @@ No installation, accounts, or internet connection required.
 ## Release Updates
 
 ### v.143
-#### New features:
+New features:
 - Unobtrusive markdown editor bar for all text fields! You can now format every text like you want, for example with lists, bold text and more.
 - clicking on the character profile picture opens the full resolution of that picture
 - the Profile window now has a section called "Pictures" where you can import pictures. these pictures are displayed as thumbnails that can be opened to full resolution with a click.
 
-#### QoL Improvements:
+QoL Improvements:
 - Discipline titles now red for better separation to their descriptions
 - Added an underline to the clan text entry for design cohesiveness
 - Added a dotted lines between the entries of a discipline to improve visual text separation
