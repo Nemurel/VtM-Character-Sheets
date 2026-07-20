@@ -58,7 +58,7 @@ No installation, accounts, or internet connection required.
 
 ## Release Updates
 
-### v.143
+### v1.43
 New features:
 - Unobtrusive markdown editor bar for all text fields! You can now format every text like you want, for example with lists, bold text and more.
 - clicking on the character profile picture opens the full resolution of that picture
